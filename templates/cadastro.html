@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Arthur Gabriel dos Anjos, Ana Luíza Domingos Xavier, Giovana Gonçalves Silva">
+    <meta name="keywords" content="Brasil, Brazil, Folklore, Folclore, Catálogo, Lendas, Mitos, Contos">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="/cadastro_login_imagem/icon.ico" type="icon/ico">
+    <link rel="stylesheet" href="/css/cadastro.css">
+
+    <title>TBLC - Cadastro</title>
+</head>
+
+<body>
+    <main id="form_container">
+        <div id="form_header">
+            <h1 id="form_title">
+                CADASTRO
+            </h1>
+
+            <a href="/login" class="btn-default">
+                <i class="fa-solid fa-right-to-bracket"></i>
+            </a>
+        </div>
+
+        <form action="/cadastro/save" method="POST" id="form">
+        <div id="input_container">
+                <div class="input-box">
+                    <label for="name" class="form-label">
+                        PRIMEIRO NOME
+                    </label>
+                    <div class="input-fild">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Usuario" required>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <label for="last_name" class="form-label">
+                        CODINOME
+                    </label>
+                    <div class="input-fild">
+                        <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Cadete" required>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <label for="email" class="form-label">
+                        E-MAIL
+                    </label>
+                    <div class="input-fild">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="voluntario1@gmail.com" required>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <label for="password" class="form-label">
+                        SENHA
+                    </label>
+                    <div class="input-fild">
+                        <input type="password" name="password" id="password" class="form-control" placeholder="********" required>
+                        <i class="fa-solid fa-eye-slash password-icon"></i>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <label for="confirm_password" class="form-label">
+                        CONFIRMAR SENHA
+                    </label>
+                    <div class="input-fild">
+                        <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="********" required>
+                        <i class="fa-solid fa-eye-slash password-icon"></i>
+                    </div>
+                    <p id="password-error"></p>
+                </div>
+
+            <div class="radio-container">
+                    <label  id="form_region">
+                        SUA REGIÃO
+                    </label>
+                <div  id="region_inputs">
+                    <div class="radio-box">
+                        <input type="radio" name="region" id="norte" class="form-control" value="norte">
+                        <label for="norte" class="form-label">
+                            NORTE
+                        </label>
+                    </div>
+
+                    <div class="radio-box">
+                        <input type="radio" name="region" id="nordeste" class="form-control" value="nordeste" required>
+                        <label for="nordeste" class="form-label">
+                            NORDESTE
+                        </label>
+                    </div>
+
+                    <div class="radio-box">
+                        <input type="radio" name="region" id="centro" class="form-control" value="centro">
+                        <label for="centro" class="form-label">
+                            CENTRO-OESTE
+                        </label>
+                    </div>
+
+                    <div class="radio-box">
+                        <input type="radio" name="region" id="sudeste" class="form-control" value="sudeste">
+                        <label for="sudeste" class="form-label">
+                            SUDESTE
+                        </label>
+                    </div>
+
+                    <div class="radio-box">
+                        <input type="radio" name="region" id="sul" class="form-control" value="sul">
+                        <label for="sul" class="form-label">
+                            SUL
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-default">
+            <i class="fa-solid fa-check"></i>
+            Criar conta
+        </button>
+
+        </form>
+    </main>
+    <script src="/js/cadastro.js"> </script>
+</body>
+</html>

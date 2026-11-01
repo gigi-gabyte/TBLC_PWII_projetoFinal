@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Frijole&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Rakkas&display=swap');
+
+body {
+    background-color: black;
+    font-family: "Public Sans", sans-serif;
+    background-image: url('/home_regiao_imagem/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#menu {
+    justify-content: flex-start;
+    display: flex;
+    gap: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    padding-right: 45px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.menu {
+    border: 2px solid rgb(0, 0, 0);
+    padding: 10px;
+    background-color: rgb(255, 218, 218);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-family: "Frijole", sans-serif;
+    font-size: 0.8em;
+}
+
+#menu1:hover {
+    border: 2px solid white;
+    padding: 10px;
+    background-color: rgb(109, 1, 1);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+#menu2:hover {
+    border: 2px solid white;
+    padding: 10px;
+    background-color: rgb(109, 1, 1);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+#menu3:hover {
+    border: 2px solid white;
+    padding: 10px;
+    background-color: rgb(109, 1, 1);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+#title {
+    background-color: rgb(145, 5, 5);
+    position: fixed;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    margin: -8px;
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    font-family: "Frijole", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 300%;
+    padding: 7px 0px 0px 0px;
+    margin-bottom: -20px;
+}
+
+h4 {
+    color: rgb(0, 0, 0);
+    font-family: "Frijole", sans-serif;
+    font-weight: 400;
+    z-index: 1000;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+#mainBox {
+    color: #ffd1d1;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0px 30px 0px 30px;
+    padding: 190px 100px 30px 100px;
+}
+#PrimeiroP::first-letter {
+  font-size: 350%;
+}
+
+img {
+    width: 400px;
+    height: auto;
+}
+
+#PrimeiroTopico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+#SegundoTopico {
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+#last {
+    margin-left: 345px;
+}
