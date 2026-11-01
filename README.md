@@ -89,7 +89,7 @@ Projeto **em desenvolvimento**, atualmente na fase de servidor com Express. Por 
 ## 👥 Autores
 
 - Arthur Gabriel dos Anjos
-- Ana Luíza Domingos Xavier
+- Ana Luiza Domingos Xavier
 - Giovana Gonçalves Silva
 
 ## 📄 Créditos e licença
