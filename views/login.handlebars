@@ -1,0 +1,50 @@
+<main id="form_container">
+    <div id="form_header">
+        <h1 id="form_title">
+            LOGIN
+        </h1>
+
+        <a href="/cadastro" class="btn-default">
+            <i class="fa-solid fa-user-pen"></i>
+        </a>
+    </div>
+
+    <form action="/login/save" method="POST" id="form">
+        <div id="input_container">
+            <div class="input-box">
+                <label for="name" class="form-label">
+                    PRIMEIRO NOME
+                </label>
+                <div class="input-fild">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Usuario" required>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <label for="email" class="form-label">
+                    E-MAIL
+                </label>
+                <div class="input-fild">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="voluntario1@gmail.com" required>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <label for="password" class="form-label">
+                    SENHA
+                </label>
+                <div class="input-fild">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="********" required>
+                    <i class="fa-solid fa-eye-slash password-icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-default">
+            <i class="fa-solid fa-check"></i>
+            ENTRAR
+        </button>
+    </form>
+</main>

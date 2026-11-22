@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{titulo}}</title>
+
+    {{#if css}}
+        <link rel="stylesheet" href="/css/{{css}}">
+    {{/if}}
+
+    {{#if icone}}
+        <link rel="icon" href="{{icone}}">
+    {{/if}}
+
+    {{#if fontAwesome}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    {{/if}}
+</head>
+<body>
+    {{{body}}}
+
+    {{#if mapa}}
+        <script src="/js/mapdata.js"></script>
+        <script src="/js/countrymap.js"></script>
+    {{/if}}
+
+    {{#if javascript}}
+        <script src="/js/{{javascript}}"></script>
+    {{/if}}
+</body>
+</html>

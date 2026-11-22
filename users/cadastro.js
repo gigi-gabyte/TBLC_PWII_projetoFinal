@@ -1,52 +1,35 @@
-const express = require('express')
-const router = express.Router()
-const path = require('path')
+const express = require('express');
+const router = express.Router();
 
-const basePath = path.join(__dirname, '../templates')
-
-router.get('/', (req, res) => 
-{
-    res.sendFile(`${basePath}/cadastro.html`)
-})
+router.get('/', (req, res) => {
+    res.render('cadastro', {
+        titulo: 'TBLC - Cadastro',
+        css: 'cadastro.css',
+        icone: '/cadastro_login_imagem/icon.ico',
+        fontAwesome: true,
+        javascript: 'cadastro.js'
+    });
+});
 
 router.post('/save', (req, res) => {
+    const { name, last_name, email, password, confirm_password, region } = req.body;
 
-    const 
-    {
-        name,
-        last_name,
-        email,
-        password,
-        confirm_password,
-        region
-    } = req.body
-
-    if (!name || !last_name || !email || !password || !confirm_password || !region) 
-    {
-        return res.status(400).send('Preencha todos os campos.')
+    if (!name || !last_name || !email || !password || !confirm_password || !region) {
+        return res.status(400).send('Preencha todos os campos.');
     }
 
-    if (password !== confirm_password) 
-    {
-        return res.status(400).send('As senhas não são iguais.')
+    if (password !== confirm_password) {
+        return res.status(400).send('As senhas não são iguais.');
     }
 
-    console.log('USUÁRIO:')
-    console.log(`NOME: ${name}`)
-    console.log(`CODINOME: ${last_name}`)
-    console.log(`E-MAIL: ${email}`)
-    console.log(`REGIÃO: ${region}`)
+    console.log('USUÁRIO:');
+    console.log(`NOME: ${name}`);
+    console.log(`CODINOME: ${last_name}`);
+    console.log(`E-MAIL: ${email}`);
+    console.log(`REGIÃO: ${region}`);
+    console.log('A senha foi confirmada, usuário permitido.');
 
-    if(password === confirm_password)
-    {
-        console.log('A senha foi confirmada, Usuario permitido\n\n');
-        res.redirect('/login')
-    }
-    else
-    {
-        console.log('A senha não foi confirmada, Usuario negado !\n\n');
-    }
+    return res.redirect('/login');
+});
 
-})
-
-module.exports = router
+module.exports = router;

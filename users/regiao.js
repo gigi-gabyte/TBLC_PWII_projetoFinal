@@ -1,37 +1,23 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
 
-const path = require('path')
+const regioes = [
+    { caminho: '/norte', view: 'regioes/norte', titulo: 'TBLC - Região Norte' },
+    { caminho: '/nordeste', view: 'regioes/nordeste', titulo: 'TBLC - Região Nordeste' },
+    { caminho: '/centro_oeste', view: 'regioes/centro_oeste', titulo: 'TBLC - Região Centro-Oeste' },
+    { caminho: '/sudeste', view: 'regioes/sudeste', titulo: 'TBLC - Região Sudeste' },
+    { caminho: '/sul', view: 'regioes/sul', titulo: 'TBLC - Região Sul' }
+];
 
-const basePath = path.join(__dirname, '../templates')
+for (const regiao of regioes) {
+    router.get(regiao.caminho, (req, res) => {
+        res.render(regiao.view, {
+            titulo: regiao.titulo,
+            css: 'regiao.css',
+            icone: '/home_regiao_imagem/icon2.png',
+            mapa: true
+        });
+    });
+}
 
-router.get('/home', (req,res) => {
-    res.sendFile(`${basePath}/home.html`)
-})
-
-router.get('/norte', (req, res) => {
-    res.sendFile(`${basePath}/norte.html`)
-})
-
-router.get('/nordeste', (req, res) => {
-    res.sendFile(`${basePath}/nordeste.html`)
-})
-
-router.get('/centro_oeste', (req, res) => {
-    res.sendFile(`${basePath}/centro_oeste.html`)
-})
-
-router.get('/sudeste', (req, res) => {
-    res.sendFile(`${basePath}/sudeste.html`)
-})
-
-router.get('/sul', (req, res) => {
-    res.sendFile(`${basePath}/sul.html`)
-})
-
-router.get('/:id', (req,res) => {
-    console.log(`Carregando usuário: ${req.params.id}`)
-    res.sendFile(`${basePath}/userform.html`)
-})
-
-module.exports = router
+module.exports = router;

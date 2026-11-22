@@ -1,17 +1,17 @@
 {
-  "name": "tblc_frontend",
+  "name": "tblc-express",
   "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
+  "description": "The Brasil Lore Collection",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./index.js localhost 3000"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
-    "express": "^5.2.1",
+    "express": "^5.3.0",
+    "express-handlebars": "^9.0.4"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.14"
   }
 }

@@ -1,41 +1,49 @@
-const express = require('express')
-const path = require('path')
-const app = express()
+    const express = require('express');
+    const path = require('path');
 
-const port = 3000
+    const { engine } = require('express-handlebars');
 
-const basePath = path.join(__dirname, 'templates')
+    const app = express();
+    const port = process.env.PORT || 3000;
 
-const regioesR = require('./users/regiao')
-const cadastroR = require('./users/cadastro')
-const loginR = require('./users/login')
-const homeR = require('./users/home')
-const perfilR = require('./users/perfil')
-const sobreNosR = require('./users/sobreNos')
-const topSecretR = require('./users/topSecret')
+        app.engine('handlebars', engine({
+        defaultLayout: 'main',
+        layoutsDir: path.join(__dirname, 'views/layouts'),
+        partialsDir: path.join(__dirname, 'views/partials')
 
-app.use(
-    express.urlencoded({
-        extended: true,
-    }),
-)
+    }));
 
-app.use(express.json())
+    app.set('view engine', 'handlebars');
+    app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/regioes', regioesR)
-app.use('/cadastro', cadastroR)
-app.use('/login', loginR)
-app.use('/home', homeR)
-app.use('/perfil', perfilR)
-app.use('/sobreNos', sobreNosR)
-app.use('/topSecret', topSecretR)
+    app.use(express.urlencoded({ extended: true }));
+    app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.redirect('/cadastro')
-})
 
-app.listen(port, () => {
-    console.log(`App rodando na porta ${port}`)
-})
+    app.use(express.static(path.join(__dirname, 'public')));
+
+ 
+    app.use('/cadastro_login_imagem',
+    express.static(path.join(__dirname, 'templates/cadastro_login_imagem'))
+    );
+
+
+    app.use('/regioes', require('./users/regiao'));
+    app.use('/cadastro', require('./users/cadastro'));
+    app.use('/login', require('./users/login'));
+    app.use('/home', require('./users/home'));
+    app.use('/perfil', require('./users/perfil'));
+    app.use('/sobreNos', require('./users/sobreNos'));
+    app.use('/topSecret', require('./users/topSecret'));
+
+    app.get('/', (req, res) => res.redirect('/cadastro'));
+
+
+    app.use((req, res) => {
+    res.status(404).send('Página não encontrada.');
+    });
+
+    app.listen(port, () => {
+    console.log(`TBLC rodando em http://localhost:${port}`);
+});

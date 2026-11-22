@@ -103,19 +103,15 @@ img {
     height: auto;
 }
 
-#PrimeiroTopico {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-}
-#SegundoTopico {
-    padding-top: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-}
 #last {
     margin-left: 345px;
+}
+
+p {
+    text-indent: 2em;
+}
+
+#arrancaL {
+    display: flex;
+    gap: 35px;
 }

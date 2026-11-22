@@ -1,11 +1,18 @@
-const express = require('express')
-const router = express.Router()
-const path = require('path')
-
-const basePath = path.join(__dirname, '../templates')
+const express = require('express');
+const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.sendFile(`${basePath}/home.html`)
-})
+    res.render('home', {
+        titulo: 'TBLC',
+        css: 'home.css',
+        icone: '/home_regiao_imagem/icon1.png',
+        mapa: true,
+        links: [
+            { nome: 'PERFIL', url: '/perfil', id: 'menu1' },
+            { nome: 'SOBRE NÓS', url: '/sobreNos', id: 'menu2' },
+            { nome: 'TOP SECRET', url: '/topSecret', id: 'menu3' }
+        ]
+    });
+});
 
-module.exports = router
+module.exports = router;
